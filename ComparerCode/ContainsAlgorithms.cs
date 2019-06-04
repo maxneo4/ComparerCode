@@ -9,7 +9,7 @@ namespace ComparerCode
 {
     [TestClass]
     public class ContainsAlgorithms : PerformanceTestClass
-    {        
+    {
         static double repetitiveCompare = 1E6;
         static double idsLength = 1e5;
         static int idsSampleLenght = 10000;
@@ -19,10 +19,10 @@ namespace ComparerCode
         static List<Guid> idsFull, idsPartial;
         static List<string> listTexts;
         static Regex regex = new Regex(@"\d");
-          
 
-    static ContainsAlgorithms()
-        {            
+
+        static ContainsAlgorithms()
+        {
             idsFull = GetIdsList(idsLength);
             idsPartial = GetRandomSample(idsFull, idsSampleLenght);
             idsPartial.AddRange(GetIdsList(idsPartialRandom));
@@ -33,13 +33,13 @@ namespace ComparerCode
         #region add if contains
 
         [TestMethod]
-        public void TestListContains()
+        public void TestIfContainsListContains()
         {
-            int contains = idsFull.Where(id => idsPartial.Contains(id)).Count();            
+            int contains = idsFull.Where(id => idsPartial.Contains(id)).Count();
         }
 
         [TestMethod]
-        public void TestHashSetContains()
+        public void TestIfContainsHashSetContains()
         {
             HashSet<Guid> hidsPartial = new HashSet<Guid>();
             foreach (var idPartial in idsPartial)
@@ -50,7 +50,7 @@ namespace ComparerCode
         }
 
         [TestMethod]
-        public void TestHashSetAndForContains()
+        public void TestIfContainsHashSetAndForContains()
         {
             HashSet<Guid> hidsPartial = new HashSet<Guid>();
             foreach (var idPartial in idsPartial)
@@ -75,7 +75,7 @@ namespace ComparerCode
         {
             for (int i = 0; i < repetitiveCompare; i++)
             {
-               bool r = text.Contains(listTexts[i]);
+                bool r = text.Contains(listTexts[i]);
             }
         }
 
@@ -84,7 +84,7 @@ namespace ComparerCode
         {
             for (int i = 0; i < repetitiveCompare; i++)
             {
-               bool r = text.IndexOf(listTexts[i]) >0;
+                bool r = text.IndexOf(listTexts[i]) > 0;
             }
         }
 
@@ -96,12 +96,12 @@ namespace ComparerCode
                 bool r = text.StartsWith(listTexts[i]);
             }
         }
-      
+
         #endregion
 
         #region regex
         [TestMethod]
-        public void TestTextContainsNumber_Regex()
+        public void TestRegexTextContainsNumber()
         {
             for (int i = 0; i < repetitiveCompare; i++)
             {
@@ -111,7 +111,7 @@ namespace ComparerCode
         }
 
         [TestMethod]
-        public void TestTextContainsNumberSingle_Regex()
+        public void TestRegexContainsNumberSingle_Regex()
         {
             for (int i = 0; i < repetitiveCompare; i++)
             {

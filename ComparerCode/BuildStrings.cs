@@ -54,5 +54,17 @@ namespace ComparerCode
             }
             string result = sb.ToString();
         }
+
+        public void TestConstantString()
+        {
+            int param = 2;
+            string query = 
+$@"select count(guidPointer) from BACATALOGREFERENCE 
+group by guidPointer
+having count(guidPointer)>{param}";
+            string oldQuery = "select count(guidPointer) from BACATALOGREFERENCE \r\n" +
+                "group by guidPointer\r\n" + 
+                "having count(guidPointer) >"+param;
+        }
     }
 }

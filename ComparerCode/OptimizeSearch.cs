@@ -19,7 +19,7 @@ namespace ComparerCode
 
         private static List<MetadataObject> objects;
         private static double objectsCount = 1e4;
-        private static int cycleWhereLinQ = 100;
+        private static int cycleWhereLinQ = 1000;
         private static List<string> types;
 
         static OptimizeSearch()
