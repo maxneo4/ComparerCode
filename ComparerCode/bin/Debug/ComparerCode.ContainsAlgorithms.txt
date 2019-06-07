@@ -1,0 +1,39 @@
+{
+  "ids_list_fullSize": "100 000",
+  "ids_list_sample_size": "10 000",
+  "ids_list_shortSize": "5 000",
+  "ids_list_partial_size": "15 000"
+}
+{
+  "Test01_ListContains                                         ": "01=> [8 032 ms]",
+  "Test02_HashSetContains                                      ": "02=> [15 ms]",
+  "Test03_HashSetAndForContains                                ": "03=> [7 ms]"
+}
+-----****-----
+
+{
+  "ids_list_fullSize": "1 000 000",
+  "ids_list_sample_size": "10 000",
+  "ids_list_shortSize": "10 000",
+  "ids_list_partial_size": "20 000"
+}
+{
+  "Test01_ListContains                                         ": "01=> [103 339 ms]",
+  "Test02_HashSetContains                                      ": "02=> [70 ms]",
+  "Test03_HashSetAndForContains                                ": "03=> [68 ms]"
+}
+-----****-----
+
+{
+  "ids_list_fullSize": "1 000 000",
+  "ids_list_sample_size": "5 000",
+  "ids_list_shortSize": "5 000",
+  "ids_list_partial_size": "10 000"
+}
+{
+  "Test01_ListContains                                         ": "01=> [58 867 ms]",
+  "Test02_HashSetContains                                      ": "02=> [56 ms]",
+  "Test03_HashSetAndForContains                                ": "03=> [59 ms]"
+}
+-----****-----
+

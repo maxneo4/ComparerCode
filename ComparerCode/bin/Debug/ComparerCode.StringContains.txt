@@ -1,0 +1,75 @@
+
+{
+  "string_list_size": "2 000 000",
+  "string_random_size": "20",
+  "text": "Este texto esta aqui"
+}
+{
+  "Test01_TextContains                                         ": "01=> [214 ms]",
+  "Test02_TextStartsWith                                       ": "02=> [518 ms]",
+  "Test03_TextIndexOf                                          ": "03=> [2 516 ms]",
+  "TestRegex01_TextContains_abc123                             ": "04=> [1 035 ms]",
+  "TestRegex02_TextContainsNumber                              ": "05=> [1 128 ms]"
+}
+-----****-----
+
+{
+  "string_list_size": "2 000 000",
+  "string_random_size": "10",
+  "text": "Este texto esta aqui"
+}
+{
+  "Test01_TextContains                                         ": "01=> [240 ms]",
+  "Test02_TextStartsWith                                       ": "02=> [488 ms]",
+  "Test03_TextIndexOf                                          ": "03=> [2 524 ms]",
+  "TestRegex01_TextContains_abc123                             ": "04=> [1 122 ms]",
+  "TestRegex02_TextContainsNumber                              ": "05=> [1 104 ms]"
+}
+-----****-----
+
+{
+  "string_list_size": "1 000 000",
+  "string_random_size": "30",
+  "text": "Este texto esta aqui"
+}
+{
+  "Test01_TextContains                                         ": "01=> [156 ms]",
+  "Test02_TextStartsWith                                       ": "02=> [228 ms]",
+  "Test03_TextIndexOf                                          ": "03=> [1 286 ms]",
+  "Test03_TextIndexOf_IfSize                                   ": "04=> [18 ms]",
+  "TestRegex01_TextContains_abc123                             ": "05=> [539 ms]",
+  "TestRegex02_TextContainsNumber                              ": "06=> [588 ms]"
+}
+-----****-----
+
+{
+  "string_list_size": "1 000 000",
+  "string_random_size": "2",
+  "text": "Este texto esta aqui"
+}
+{
+  "Test01_TextContains                                         ": "01=> [121 ms]",
+  "Test02_TextStartsWith                                       ": "02=> [259 ms]",
+  "Test03_TextIndexOf                                          ": "03=> [1 293 ms]",
+  "Test03_TextIndexOf_IfSize                                   ": "04=> [240 ms]",
+  "TestRegex01_TextContains_abc123                             ": "05=> [539 ms]",
+  "TestRegex02_TextContainsNumber                              ": "06=> [407 ms]"
+}
+
+-----****-----
+
+{
+  "string_list_size": "3 000 000",
+  "string_random_size": "2",
+  "text": "Este texto esta aqui"
+}
+{
+  "Test01_TextContains                                         ": "01=> [366 ms]",
+  "Test02_TextStartsWith                                       ": "02=> [731 ms]",
+  "Test03_TextIndexOf                                          ": "03=> [3 659 ms]",
+  "Test03_TextIndexOf_IfSize                                   ": "04=> [715 ms]",
+  "TestRegex01_TextContains_abc123                             ": "05=> [1 592 ms]",
+  "TestRegex02_TextContainsNumber                              ": "06=> [1 005 ms]"
+}
+-----****-----
+

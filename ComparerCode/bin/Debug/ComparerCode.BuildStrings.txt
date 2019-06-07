@@ -1,0 +1,39 @@
+{
+  "string_list_size": "30 000"
+}
+{
+  "Test01_AppendWithPlus                                       ": "01=> [9 688 ms]",
+  "Test02_AppendWithConcat                                     ": "02=> [9 994 ms]",
+  "Test03_AppendWithOneConcat                                  ": "03=> [8 ms]",
+  "Test04_AppendWithSB                                         ": "04=> [1 ms]",
+  "TestConstant01_interpolationAndBreakLineSupport             ": "05=> [4 ms]",
+  "TestConstant02_stringByParts                                ": "06=> [0 ms]"
+}
+-----****-----
+
+{
+  "string_list_size": "15 000"
+}
+{
+  "Test01_AppendWithPlus                                       ": "01=> [2 024 ms]",
+  "Test02_AppendWithConcat                                     ": "02=> [1 983 ms]",
+  "Test03_AppendWithOneConcat                                  ": "03=> [0 ms]",
+  "Test04_AppendWithSB                                         ": "04=> [0 ms]",
+  "TestConstant01_interpolationAndBreakLineSupport             ": "05=> [4 ms]",
+  "TestConstant02_stringByParts                                ": "06=> [0 ms]"
+}
+-----****-----
+
+{
+  "string_list_size": "45 000"
+}
+{
+  "Test01_AppendWithPlus                                       ": "01=> [25 916 ms]",
+  "Test02_AppendWithConcat                                     ": "02=> [26 929 ms]",
+  "Test03_AppendWithOneConcat                                  ": "03=> [3 ms]",
+  "Test04_AppendWithSB                                         ": "04=> [8 ms]",
+  "TestConstant01_interpolationAndBreakLineSupport             ": "05=> [5 ms]",
+  "TestConstant02_stringByParts                                ": "06=> [0 ms]"
+}
+-----****-----
+

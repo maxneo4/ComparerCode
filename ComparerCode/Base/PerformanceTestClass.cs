@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 
 namespace ComparerCode.Base
-{
+{    
     [TestClass]
     public abstract class PerformanceTestClass
     {
         private static Random random = new Random();
         private static Stopwatch sw = new Stopwatch();
         private static string logPath;
-        private static Dictionary<string, string> times;
+        private static SortedDictionary<string, string> times;
 
         protected static void AddToLog(string text)
         {
@@ -97,7 +97,7 @@ namespace ComparerCode.Base
         public void End()
         {
             sw.Stop();
-            times.Add($"{Format(TestContext.TestName)}", $"{(times.Count + 1).ToString("00")}=> [{sw.ElapsedMilliseconds.ToString("#,##0").Replace(".", " ")} ms]");
+            times.Add($"{Format(TestContext.TestName)}", $"[{sw.ElapsedMilliseconds.ToString("#,##0").Replace(".", " ")} ms]");
             sw.Reset();
         }
 
@@ -112,13 +112,19 @@ namespace ComparerCode.Base
         [AssemblyInitialize]
         public static void AssemblyInitialize(TestContext testContext)
         {
-            times = new Dictionary<string, string>();
+            times = new SortedDictionary<string, string>();
             logPath = $"{testContext.FullyQualifiedTestClassName}.txt";
         }
 
         [AssemblyCleanup()]
         public static void AssemblyCleanup()
         {
+            int pos = 1;
+            foreach (var key in times.Keys.ToList())
+            {
+                times[key] = $"{ pos.ToString("00")}=> " + times[key];
+                pos++;
+            }
             AddToLog(times);
             AddToLog("-----****-----\r\n");
             Process.Start(logPath);

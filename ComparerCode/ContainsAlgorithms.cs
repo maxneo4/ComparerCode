@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using ComparerCode.Base;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,36 +9,33 @@ namespace ComparerCode
     [TestClass]
     public class ContainsAlgorithms : PerformanceTestClass
     {
-        static double repetitiveCompare = 1E6;
-        static double idsLength = 1e5;
-        static int idsSampleLenght = 10000;
-        static int idsPartialRandom = 5000;
-        static int stringRandomLength = 50;
+        //good value 100e3
+        static double ids_list_fullSize = 1e6;
+        static int ids_list_sample_size = 5000;
+        static int ids_list_shortSize = 5000;        
 
-        static List<Guid> idsFull, idsPartial;
-        static List<string> listTexts;
-        static Regex regex = new Regex(@"\d");
-
+        static List<Guid> idsFull, idsPartial;     
 
         static ContainsAlgorithms()
         {
-            idsFull = GetIdsList(idsLength);
-            idsPartial = GetRandomSample(idsFull, idsSampleLenght);
-            idsPartial.AddRange(GetIdsList(idsPartialRandom));
-            listTexts = GetStringList(repetitiveCompare, stringRandomLength);
-            AddToLog(new { repetitiveCompare, idsLength, idsSampleLenght, idsPartialRandom, stringRandomLength });
+            idsFull = GetIdsList(ids_list_fullSize);
+            idsPartial = GetRandomSample(idsFull, ids_list_sample_size);
+            idsPartial.AddRange(GetIdsList(ids_list_shortSize));
+            int ids_list_partial_size = ids_list_shortSize + ids_list_sample_size;
+           
+            AddToLog(new { ids_list_fullSize, ids_list_sample_size, ids_list_shortSize,  ids_list_partial_size});
         }
 
         #region add if contains
 
         [TestMethod]
-        public void TestIfContainsListContains()
+        public void Test01_ListContains()
         {
             int contains = idsFull.Where(id => idsPartial.Contains(id)).Count();
         }
 
         [TestMethod]
-        public void TestIfContainsHashSetContains()
+        public void Test02_HashSetContains()
         {
             HashSet<Guid> hidsPartial = new HashSet<Guid>();
             foreach (var idPartial in idsPartial)
@@ -50,7 +46,7 @@ namespace ComparerCode
         }
 
         [TestMethod]
-        public void TestIfContainsHashSetAndForContains()
+        public void Test03_HashSetAndForContains()
         {
             HashSet<Guid> hidsPartial = new HashSet<Guid>();
             foreach (var idPartial in idsPartial)
@@ -64,61 +60,6 @@ namespace ComparerCode
                     contains++;
             }
         }
-        #endregion
-
-        #region text contains
-
-        string text = "Este texto esta aqui";
-
-        [TestMethod]
-        public void TestTextContains()
-        {
-            for (int i = 0; i < repetitiveCompare; i++)
-            {
-                bool r = text.Contains(listTexts[i]);
-            }
-        }
-
-        [TestMethod]
-        public void TestTextIndexOf()
-        {
-            for (int i = 0; i < repetitiveCompare; i++)
-            {
-                bool r = text.IndexOf(listTexts[i]) > 0;
-            }
-        }
-
-        [TestMethod]
-        public void TestTextStartsWith()
-        {
-            for (int i = 0; i < repetitiveCompare; i++)
-            {
-                bool r = text.StartsWith(listTexts[i]);
-            }
-        }
-
-        #endregion
-
-        #region regex
-        [TestMethod]
-        public void TestRegexTextContainsNumber()
-        {
-            for (int i = 0; i < repetitiveCompare; i++)
-            {
-                Match m = regex.Match(listTexts[i]);
-                bool r = m.Success;
-            }
-        }
-
-        [TestMethod]
-        public void TestRegexContainsNumberSingle_Regex()
-        {
-            for (int i = 0; i < repetitiveCompare; i++)
-            {
-                Match m = regex.Match("abc123");
-                bool r = m.Success;
-            }
-        }
-        #endregion
+        #endregion        
     }
 }

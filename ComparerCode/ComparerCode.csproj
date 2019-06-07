@@ -58,6 +58,7 @@
     <Compile Include="OptimizeSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\NumberConverter.cs" />
+    <Compile Include="StringContains.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
