@@ -1,0 +1,109 @@
+{
+  "list_objects_size": "100 000"
+}
+{
+  "list_objects_size": "10 000"
+}
+{
+  "not_ids": "3 650",
+  "not_parents": "0"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [2 618 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "10 000"
+}
+{
+  "not_ids": "3 642",
+  "not_parents": "6 423"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [2 511 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "20 000"
+}
+{
+  "not_ids": "7 345",
+  "not_parents": "12 603"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [19 832 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "15 000"
+}
+{
+  "not_ids": "5 430",
+  "not_parents": "9 513"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [8 867 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "15 000"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [9 087 ms]",
+  "Test02_GetTypesAndContentLinQ_ToList                        ": "02=> [0 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "15 000"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [9 835 ms]",
+  "Test01_setIdsAndParent_Not_HS                               ": "02=> [27 ms]",
+  "Test02_setIdsAndParent_Not                                  ": "03=> [9 733 ms]",
+  "Test02_setIdsAndParent_Not_BadHS                            ": "04=> [52 875 ms]",
+  "Test02_setIdsAndParent_Not_GoodHS                           ": "05=> [8 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "15 000"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [10 405 ms]",
+  "Test01_setIdsAndParent_Not_HS                               ": "02=> [25 ms]",
+  "Test02_setIdsAndParent_Not                                  ": "03=> [9 783 ms]",
+  "Test02_setIdsAndParent_Not_BadHS                            ": "04=> [52 960 ms]",
+  "Test02_setIdsAndParent_Not_GoodHS_Extention                 ": "05=> [22 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "15 000"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [8 361 ms]",
+  "Test01_setIdsAndParent_Not_HS                               ": "02=> [14 ms]",
+  "Test02_setIdsAndParent_Not                                  ": "03=> [8 725 ms]",
+  "Test02_setIdsAndParent_Not_GoodHS                           ": "04=> [34 ms]",
+  "Test02_setIdsAndParent_Not_GoodHS_Extention                 ": "05=> [13 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "5 000"
+}
+{
+  "Test01_setIdsAndParent_Not                                  ": "01=> [550 ms]",
+  "Test01_setIdsAndParent_Not_HS                               ": "02=> [3 ms]",
+  "Test02_setIdsAndParent_Not                                  ": "03=> [567 ms]",
+  "Test02_setIdsAndParent_Not_BadHS                            ": "04=> [4 536 ms]",
+  "Test02_setIdsAndParent_Not_GoodHS                           ": "05=> [28 ms]",
+  "Test02_setIdsAndParent_Not_GoodHS_Extention                 ": "06=> [5 ms]"
+}
+-----****-----
+

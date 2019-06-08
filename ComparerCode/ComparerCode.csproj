@@ -55,6 +55,8 @@
     <Compile Include="Base\PerformanceTestClass.cs" />
     <Compile Include="BuildStrings.cs" />
     <Compile Include="ContainsAlgorithms.cs" />
+    <Compile Include="Extention\SearchExt.cs" />
+    <Compile Include="OptimizeSearchIndexation.cs" />
     <Compile Include="OptimizeSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\NumberConverter.cs" />

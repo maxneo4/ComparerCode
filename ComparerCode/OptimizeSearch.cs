@@ -18,8 +18,10 @@ namespace ComparerCode
         }
 
         private static List<MetadataObject> objects;
-        private static double objectsCount = 1e4;
-        private static int cycleWhereLinQ = 1000;
+        //good value 100e3
+        private static double list_objects_size = 100e3;
+        //good value 200
+        private static int cycle_linq = 200;
         private static List<string> types;
 
         static OptimizeSearch()
@@ -31,12 +33,90 @@ namespace ComparerCode
                 Content = GetRandomString(100),
                 Name = GetRandomString(20),
                 Type  = GetRandomSample(types)
-            }; }, objectsCount);
-            AddToLog(new { objectsCount, cycleWhereLinQ });
+            }; }, list_objects_size);
+            AddToLog(new { list_objects_size, cycle_linq });
         }
-       
+
         [TestMethod]
-        public void Test_GetDifferentTypesLinQ()
+        public void Test01_GetTypesAndContentLinQ()
+        {
+            IEnumerable<MetadataObject> forms = objects.Where(o => o.Type == "Form");
+            IEnumerable<MetadataObject> rules = objects.Where(o => o.Type == "Rule");
+            IEnumerable<MetadataObject> userPs = objects.Where(o => o.Type == "UserProperty");
+            IEnumerable<MetadataObject> tasks = objects.Where(o => o.Type == "Task");
+            IEnumerable<MetadataObject> contexts = objects.Where(o => o.Type == "Context");
+
+            for (int i = 0; i < cycle_linq; i++)
+            {
+                List<MetadataObject> formsWS = forms.Where(f => f.Content.Contains("01")).ToList();
+                List<MetadataObject> rulesWS = rules.Where(f => f.Content.Contains("01")).ToList();
+                List<MetadataObject> userPsWS = userPs.Where(f => f.Content.Contains("01")).ToList();
+                List<MetadataObject> tasksWS = tasks.Where(f => f.Content.Contains("01")).ToList();
+                List<MetadataObject> contextsWS = contexts.Where(f => f.Content.Contains("01")).ToList();
+            }
+        }
+
+        [TestMethod]
+        public void Test02_GetTypesAndContentLinQ_ToList()
+        {
+            List<MetadataObject> forms = objects.Where(o => o.Type == "Form").ToList();
+            List<MetadataObject> rules = objects.Where(o => o.Type == "Rule").ToList();
+            List<MetadataObject> userPs = objects.Where(o => o.Type == "UserProperty").ToList();
+            List<MetadataObject> tasks = objects.Where(o => o.Type == "Task").ToList();
+            List<MetadataObject> contexts = objects.Where(o => o.Type == "Context").ToList();
+
+            for (int i = 0; i < cycle_linq; i++)
+            {
+                List<MetadataObject> formsWS = forms.Where(f => f.Content.Contains("01")).ToList();
+                List<MetadataObject> rulesWS = rules.Where(f => f.Content.Contains("01")).ToList();
+                List<MetadataObject> userPsWS = userPs.Where(f => f.Content.Contains("01")).ToList();
+                List<MetadataObject> tasksWS = tasks.Where(f => f.Content.Contains("01")).ToList();
+                List<MetadataObject> contextsWS = contexts.Where(f => f.Content.Contains("01")).ToList();
+            }
+        }
+
+        [TestMethod]
+        public void Test03_GetTypesAndContentLinQ_ToList_optimizeCycle()
+        {
+            List<MetadataObject> forms = objects.Where(o => o.Type == "Form").ToList();
+            List<MetadataObject> rules = objects.Where(o => o.Type == "Rule").ToList();
+            List<MetadataObject> userPs = objects.Where(o => o.Type == "UserProperty").ToList();
+            List<MetadataObject> tasks = objects.Where(o => o.Type == "Task").ToList();
+            List<MetadataObject> contexts = objects.Where(o => o.Type == "Context").ToList();
+
+            for (int i = 0; i < cycle_linq; i++)
+            {
+                List<MetadataObject> objectsWith01 = objects.Where(o => o.Content.Contains("01")).ToList();
+                List<MetadataObject> formsWs = objectsWith01.Where(o => o.Type == "Form").ToList();
+                List<MetadataObject> rulesWs = objectsWith01.Where(o => o.Type == "Rule").ToList();
+                List<MetadataObject> userPsWs = objectsWith01.Where(o => o.Type == "UserProperty").ToList();
+                List<MetadataObject> tasksWs = objectsWith01.Where(o => o.Type == "Task").ToList();
+                List<MetadataObject> contextsWs = objectsWith01.Where(o => o.Type == "Context").ToList();
+            }
+        }
+
+        [TestMethod]
+        public void Test03_GetTypesAndContentLinQ_ToList_optimizeCycle_OUT()
+        {
+            List<MetadataObject> forms = objects.Where(o => o.Type == "Form").ToList();
+            List<MetadataObject> rules = objects.Where(o => o.Type == "Rule").ToList();
+            List<MetadataObject> userPs = objects.Where(o => o.Type == "UserProperty").ToList();
+            List<MetadataObject> tasks = objects.Where(o => o.Type == "Task").ToList();
+            List<MetadataObject> contexts = objects.Where(o => o.Type == "Context").ToList();
+
+            List<MetadataObject> objectsWith01 = objects.Where(o => o.Content.Contains("01")).ToList();
+            for (int i = 0; i < cycle_linq; i++)
+            {
+                List<MetadataObject> formsWs = objectsWith01.Where(o => o.Type == "Form").ToList();
+                List<MetadataObject> rulesWs = objectsWith01.Where(o => o.Type == "Rule").ToList();
+                List<MetadataObject> userPsWs = objectsWith01.Where(o => o.Type == "UserProperty").ToList();
+                List<MetadataObject> tasksWs = objectsWith01.Where(o => o.Type == "Task").ToList();
+                List<MetadataObject> contextsWs = objectsWith01.Where(o => o.Type == "Context").ToList();
+            }
+        }
+
+        [TestMethod]
+        public void Test04_GetTypesLinQ()
         {
             List<MetadataObject> forms = objects.Where(o => o.Type == "Form").ToList();
             List<MetadataObject> rules = objects.Where(o => o.Type == "Rule").ToList();
@@ -46,7 +126,7 @@ namespace ComparerCode
         }
 
         [TestMethod]
-        public void Test_GetDifferentTypes_For()
+        public void Test05_GetTypes_For()
         {
             List<MetadataObject> forms = new List<MetadataObject>();
             List<MetadataObject> rules = new List<MetadataObject>();
@@ -70,7 +150,7 @@ namespace ComparerCode
         }
 
         [TestMethod]
-        public void Test_GetDifferentTypesLinQ_Magic()
+        public void Test06_GetTypesLinQ_Magic()
         {
             IEnumerable<MetadataObject> forms = objects.Where(o => o.Type == "Form");
             IEnumerable<MetadataObject> rules = objects.Where(o => o.Type == "Rule");
@@ -79,44 +159,6 @@ namespace ComparerCode
             IEnumerable<MetadataObject> contexts = objects.Where(o => o.Type == "Context");
         }
 
-
-        [TestMethod]
-        public void Test_GetDifferentTypesAndContentLinQ()
-        {
-            IEnumerable<MetadataObject> forms = objects.Where(o => o.Type == "Form");
-            IEnumerable<MetadataObject> rules = objects.Where(o => o.Type == "Rule");
-            IEnumerable<MetadataObject> userPs = objects.Where(o => o.Type == "UserProperty");
-            IEnumerable<MetadataObject> tasks = objects.Where(o => o.Type == "Task");
-            IEnumerable<MetadataObject> contexts = objects.Where(o => o.Type == "Context");
-
-            for (int i = 0; i < cycleWhereLinQ; i++)
-            {
-                List<MetadataObject> formsWS = forms.Where(f => f.Content.Contains("01")).ToList();
-                List<MetadataObject> rulesWS = rules.Where(f => f.Content.Contains("01")).ToList();
-                List<MetadataObject> userPsWS = userPs.Where(f => f.Content.Contains("01")).ToList();
-                List<MetadataObject> tasksWS = tasks.Where(f => f.Content.Contains("01")).ToList();
-                List<MetadataObject> contextsWS = contexts.Where(f => f.Content.Contains("01")).ToList();
-            }            
-        }
-
-        [TestMethod]
-        public void Test_GetDifferentTypesAndContentLinQ_ToList()
-        {
-            List<MetadataObject> forms = objects.Where(o => o.Type == "Form").ToList();
-            List<MetadataObject> rules = objects.Where(o => o.Type == "Rule").ToList();
-            List<MetadataObject> userPs = objects.Where(o => o.Type == "UserProperty").ToList();
-            List<MetadataObject> tasks = objects.Where(o => o.Type == "Task").ToList();
-            List<MetadataObject> contexts = objects.Where(o => o.Type == "Context").ToList();
-
-            for (int i = 0; i < cycleWhereLinQ; i++)
-            {
-                List<MetadataObject> formsWS = forms.Where(f => f.Content.Contains("01")).ToList();
-                List<MetadataObject> rulesWS = rules.Where(f => f.Content.Contains("01")).ToList();
-                List<MetadataObject> userPsWS = userPs.Where(f => f.Content.Contains("01")).ToList();
-                List<MetadataObject> tasksWS = tasks.Where(f => f.Content.Contains("01")).ToList();
-                List<MetadataObject> contextsWS = contexts.Where(f => f.Content.Contains("01")).ToList();
-            }
-        }
 
         //***********Linq ienumarable without search, llinq where.where
 

@@ -1,0 +1,95 @@
+{
+  "list_objects_size": "1 000",
+  "cycle_linq": "100"
+}
+{
+  "Test_GetDifferentTypes_For                                  ": "01=> [1 ms]",
+  "Test_GetDifferentTypesAndContentLinQ                        ": "02=> [56 ms]",
+  "Test_GetDifferentTypesAndContentLinQ_ToList                 ": "03=> [38 ms]",
+  "Test_GetDifferentTypesLinQ                                  ": "04=> [5 ms]",
+  "Test_GetDifferentTypesLinQ_Magic                            ": "05=> [0 ms]"
+}
+-----****-----
+
+
+{
+  "list_objects_size": "10 000",
+  "cycle_linq": "100"
+}
+{
+  "Test01_GetDifferentTypesAndContentLinQ                      ": "01=> [590 ms]",
+  "Test02_GetDifferentTypesAndContentLinQ_ToList               ": "02=> [443 ms]",
+  "Test03_GetDifferentTypesLinQ                                ": "03=> [8 ms]",
+  "Test04_GetDifferentTypes_For                                ": "04=> [1 ms]",
+  "Test05_GetDifferentTypesLinQ_Magic                          ": "05=> [0 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "100 000",
+  "cycle_linq": "100"
+}
+{
+  "Test01_GetDifferentTypesAndContentLinQ                      ": "01=> [7 083 ms]",
+  "Test02_GetDifferentTypesAndContentLinQ_ToList               ": "02=> [4 865 ms]",
+  "Test03_GetDifferentTypesLinQ                                ": "03=> [42 ms]",
+  "Test04_GetDifferentTypes_For                                ": "04=> [12 ms]",
+  "Test05_GetDifferentTypesLinQ_Magic                          ": "05=> [0 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "100 000",
+  "cycle_linq": "1 000"
+}
+{
+  "Test01_GetDifferentTypesAndContentLinQ                      ": "01=> [70 788 ms]",
+  "Test02_GetDifferentTypesAndContentLinQ_ToList               ": "02=> [48 236 ms]",
+  "Test03_GetDifferentTypesLinQ                                ": "03=> [48 ms]",
+  "Test04_GetDifferentTypes_For                                ": "04=> [14 ms]",
+  "Test05_GetDifferentTypesLinQ_Magic                          ": "05=> [0 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "100 000",
+  "cycle_linq": "200"
+}
+{
+  "Test01_GetDifferentTypesAndContentLinQ                      ": "01=> [15 750 ms]",
+  "Test02_GetDifferentTypesAndContentLinQ_ToList               ": "02=> [10 136 ms]",
+  "Test03_GetDifferentTypesLinQ                                ": "03=> [41 ms]",
+  "Test04_GetDifferentTypes_For                                ": "04=> [18 ms]",
+  "Test05_GetDifferentTypesLinQ_Magic                          ": "05=> [0 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "100 000",
+  "cycle_linq": "200"
+}
+{
+  "Test01_GetDifferentTypesAndContentLinQ                      ": "01=> [15 439 ms]",
+  "Test02_GetDifferentTypesAndContentLinQ_ToList               ": "02=> [10 101 ms]",
+  "Test03_GetDifferentTypesAndContentLinQ_ToList               ": "03=> [8 313 ms]",
+  "Test04_GetDifferentTypesLinQ                                ": "04=> [45 ms]",
+  "Test05_GetDifferentTypes_For                                ": "05=> [13 ms]",
+  "Test06_GetDifferentTypesLinQ_Magic                          ": "06=> [0 ms]"
+}
+-----****-----
+
+{
+  "list_objects_size": "100 000",
+  "cycle_linq": "200"
+}
+{
+  "Test01_GetDifferentTypesAndContentLinQ                      ": "01=> [17 266 ms]",
+  "Test02_GetDifferentTypesAndContentLinQ_ToList               ": "02=> [10 721 ms]",
+  "Test03_GetDifferentTypesAndContentLinQ_ToList_optimizeCycle ": "03=> [9 262 ms]",
+  "Test03_GetDifferentTypesAndContentLinQ_ToList_optimizeCycle_OUT": "04=> [396 ms]",
+  "Test04_GetDifferentTypesLinQ                                ": "05=> [43 ms]",
+  "Test05_GetDifferentTypes_For                                ": "06=> [15 ms]",
+  "Test06_GetDifferentTypesLinQ_Magic                          ": "07=> [0 ms]"
+}
+-----****-----
+
