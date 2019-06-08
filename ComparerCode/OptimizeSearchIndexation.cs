@@ -62,7 +62,7 @@ namespace ComparerCode
         }
 
         [TestMethod]
-        public void Test01_setIdsAndParent_Not_HS()
+        public void Test02_setIdsAndParent_Not_HS()
         {
             //get set_ids not in objects
             //get objects with parents not present in objects
@@ -85,7 +85,7 @@ namespace ComparerCode
         }
 
         [TestMethod]
-        public void Test02_setIdsAndParent_Not()
+        public void Test03_setIdsAndParent_Not()
         {
             //get set_ids not in objects
             //get objects with parents not present in objects
@@ -96,7 +96,7 @@ namespace ComparerCode
 
         [Ignore]//55 segundos 15e3
         [TestMethod]
-        public void Test02_setIdsAndParent_Not_BadHS()
+        public void Test04_setIdsAndParent_Not_BadHS()
         {
             //get set_ids not in objects
             //get objects with parents not present in objects
@@ -106,7 +106,7 @@ namespace ComparerCode
         }
                 
         [TestMethod]
-        public void Test02_setIdsAndParent_Not_GoodHS()
+        public void Test05_setIdsAndParent_Not_GoodHS()
         {
             //get set_ids not in objects
             //get objects with parents not present in objects
@@ -120,7 +120,7 @@ namespace ComparerCode
         }
 
         [TestMethod]
-        public void Test02_setIdsAndParent_Not_GoodHS_Extention()
+        public void Test06_setIdsAndParent_Not_GoodHS_Extention()
         {
             //get set_ids not in objects
             //get objects with parents not present in objects           
